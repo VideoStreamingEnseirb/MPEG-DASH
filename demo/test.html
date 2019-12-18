@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Demo MPEG-DASH</title>
+
+    <script src="../sourcedash/dash.all.debug.js"></script>
+
+    <script class="code" src=index.js></script>
+
+
+    <style src="styletest.css"> </style>
+</head>
+
+<body>
+
+    <div id="container">
+        <div class="video-container">
+            <video data-dashjs-player autoplay controls="true">
+            </video>
+        </div>
+        <fieldset>
+            <legend>Video Fragment</legend>
+            <div id="trace" placeholder="Trapped events will be displayed here"></div>
+
+        </fieldset>
+        <fieldset>
+            <legend>Audio Fragment</legend>
+            <div id="trace2" placeholder="Trapped events will be displayed here"></div>
+
+        </fieldset>
+        <!-- <textarea id="trace" placeholder="Trapped events will be displayed here"></textarea>
+        <textarea id="trace2" placeholder="Trapped events will be displayed here"></textarea> -->
+        <fieldset>
+            <legend>Configuration parameters</legend>
+            <div>
+                Max stable buffer (seconds): <input type="number" id="stableBuffer" value="20"> (Current Buffer: <span
+                    id="currentBufferLevel" )>0</span> seconds)
+                <div class="description">The time that the internal buffer target will be set to post startup/seeks (NOT
+                    top quality).</div>
+            </div>
+            <div>
+                Buffer lenght at top quality (seconds): <input type="number" id="topQualityBuffer" value="20">
+                <div class="description">The time that the internal buffer target will be set to once playing the top
+                    quality.</div>
+            </div>
+            <div>
+                Max selectable bitrate (Kbps): <input type="number" id="maxBitrate" value="5000"> (Downloading bitrate:
+                <span id="reportedBitrate" )>0</span>)
+                <div class="description">The maximum bitrate selectable by the ABR algorithms will choose. Use -1 for no
+                    limit.</div>
+            </div>
+            <div>
+                Min selectable bitrate (Kbps): <input type="number" id="minBitrate" value="-1">
+                <div class="description">The minimum bitrate that the ABR algorithms will choose. Use -1 for no limit.
+                </div>
+            </div>
+            <div>
+                Limit Bitrate By Portal Size: <input type="checkbox" id="limitByPortal">
+                <div class="description">If true, the size of the video portal will limit the max chosen video
+                    resolution.</div>
+            </div>
+            <div>
+                <button onclick="applySettings()">Apply changes</button>
+            </div>
+        </fieldset>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            init();
+        });
+    </script>
+
+</body>
+
+</html>
