@@ -38,14 +38,19 @@
             <div class="card-body">
                 <h5 class="card-title">MPEG-DASH</h5>
                 <p class="card-text">
+
+                    <img src="../images/Bitrate_streaming.jpg" width=700px>
+
                     Dynamic Adaptative Streaming over HTTP, or MPEG-DASH is an adaptative bitrate streaming for media content on internet. It is based on the derivation of content in several versions having distinct quality and bit rate characteristics and then cut into short segments. A manifest file in xml format (the Media Presentation Description (MPD)) gives the client the information necessary to request each segment individually from conventional HTTP web servers. The selection of each segment is done while the content is being played by choosing the maximum bit rate that avoids stalls or rebuffering events. This method adapts the stream to the network conditions when changing, and provides high quality streaming. The use of HTTP makes possible to rely on the existing web infrastructure and the existing network libraries on devices connected to the Internet.
                     
+                    <img src="../images/Protocol stack.jpg" width=400px>
+
                     The protocol stack of MPEG-DASH can be divided into two possibilities : one connected and one not connected. 
                     The network layer is the same for both possibilities : IP. It is on the transport layer that the protocol stack splits in two :
                     The connected version uses TCP as transport layer, followed by TLS 1.2 for the security layer and finally HTTP/2 for the application layer.
                     The non-connected version uses UD¨P as transport layer, combined with QUIC which extends itself from the transport layer to the application layer, which is shared with HTTP/2 API.
                     
-                    
+                    <img src="../images/MPD schema.jpg" width=700px>
                     
                     Media Presentation Description (or MDP) is an XML document containing information about the data segments. It is divided into multiple parts :
                     A period ID : determines the type of information (audio, video, subtitle)
@@ -54,7 +59,7 @@
                     A segment information : contains the URL of each segment and provides more information about the segment in itself (beginning time, end time, …)
                     With a MPD, it is easy to select the segment wanted, with the quality/bitrate/… needed.
                     
-                    
+                    <img src="../images/Fonctionment.jpg" width=700px>
                     
                     Playback of content via MPEG-DASH is as follows.
                     First, the client requests the Media Presentation Description (MPD) associated with the desired content from the MPD server and receives it.
