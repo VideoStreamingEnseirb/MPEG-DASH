@@ -7,7 +7,7 @@
 
     <script src="sourcedash/dash.all.debug.js"></script>
 
-    <script class="code" src=index.js></script>
+    <script class="code" src="index.js" ></script>></script>
 
 
     <link rel="stylesheet" type="text/css" href="styletest.css">
@@ -16,16 +16,17 @@
 <body>
 
     <div id="container">
-        <div class="video-container">
+        <div class="video-container" id="colonne1">
             <video data-dashjs-player autoplay controls="true">
+                    
             </video>
         </div>
-        <fieldset>
+        <fieldset id="colonne2">
             <legend>Video Fragment</legend>
             <div id="trace" placeholder="Trapped events will be displayed here"></div>
 
         </fieldset>
-        <fieldset>
+        <fieldset id="colonne3">
             <legend>Audio Fragment</legend>
             <div id="trace2" placeholder="Trapped events will be displayed here"></div>
 

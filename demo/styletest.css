@@ -33,3 +33,15 @@ fieldset>div {
     font-size: 0.9em;
     color: #888888;
 }
+
+#colonne2 {
+	float: left;
+	width: 160px;
+	background: lightblue;
+}
+
+#colonne3 {
+	float: rght;
+	width: 160px;
+	background: lightblue;
+}
