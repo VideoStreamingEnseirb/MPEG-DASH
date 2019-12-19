@@ -11,6 +11,23 @@
     color: white;
 }
 
+
+.texte-illustration {
+    overflow: hidden; /* empêche le dépassement des flottants */
+}
+.texte-illustration .flotteg {
+    float: left;
+    margin: 5px 20px 5px 0;
+}
+.texte-illustration .flotted {
+    float: right;
+    margin: 5px 0 5px 20px;
+}
+.texte-illustration p {
+    overflow: hidden; /* Contexte de formatage. Force le paragraphe à
+    adapter sa largeur aux flottants adjacents. */
+}
+
 .anchor {
     margin-top: -130px; 
     margin-bottom: 130px;
