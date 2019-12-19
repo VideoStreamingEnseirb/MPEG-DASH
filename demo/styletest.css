@@ -1,0 +1,47 @@
+video {
+    width: 70%;
+}
+
+#trace {
+    width: 500px;
+    height: 360px;
+    font-size: 10px;
+    overflow-y: scroll;
+}
+
+#trace2 {
+    width: 500px;
+    height: 360px;
+    font-size: 10px;
+    overflow-y: scroll;
+
+}
+
+#container {
+    display: inline-block;
+}
+
+fieldset {
+    width: 70%;
+}
+
+fieldset>div {
+    margin-top: 20px;
+}
+
+.description {
+    font-size: 0.9em;
+    color: #888888;
+}
+
+#colonne2 {
+	float: left;
+	width: 160px;
+	background: lightblue;
+}
+
+#colonne3 {
+	float: rght;
+	width: 160px;
+	background: lightblue;
+}
