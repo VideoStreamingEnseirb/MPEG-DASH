@@ -2,6 +2,19 @@
     color: white;
 }
 
+#navbar2 {
+    background-color: #646060;
+    margin-top: 56px;
+}
+
+#nav2{
+    color: white;
+}
+
+body {
+    padding-top: 105px;
+}
+
 
 .container{
     margin-top: 100px;
