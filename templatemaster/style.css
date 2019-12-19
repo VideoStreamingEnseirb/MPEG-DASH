@@ -11,6 +11,11 @@
     color: white;
 }
 
+.anchor {
+    margin-top: -130px; 
+    margin-bottom: 130px;
+}
+
 body {
     padding-top: 105px;
 }
