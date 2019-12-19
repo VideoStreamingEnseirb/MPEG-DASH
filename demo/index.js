@@ -158,7 +158,7 @@ function showEvent(e) {
             }
         }
     }
-    
+
     else if (e.type == "qualityChangeRequested") {
         if (e["mediaType"] == "video") {
             log("QUALITY CHANGE: On passe de " + e["oldQuality"] + " à " + e["newQuality"], 3)

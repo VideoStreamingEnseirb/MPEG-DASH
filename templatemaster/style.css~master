@@ -1,0 +1,50 @@
+#nav{
+    color: white;
+}
+
+#navbar2 {
+    background-color: #646060;
+    margin-top: 56px;
+}
+
+#nav2{
+    color: white;
+}
+
+
+.texte-illustration {
+    overflow: hidden; /* empêche le dépassement des flottants */
+}
+.texte-illustration .flotteg {
+    float: left;
+    margin: 5px 20px 5px 0;
+}
+.texte-illustration .flotted {
+    float: right;
+    margin: 5px 0 5px 20px;
+}
+.texte-illustration p {
+    overflow: hidden; /* Contexte de formatage. Force le paragraphe à
+    adapter sa largeur aux flottants adjacents. */
+}
+
+.anchor {
+    margin-top: -130px; 
+    margin-bottom: 130px;
+}
+
+body {
+    padding-top: 105px;
+}
+
+
+.container{
+    margin-top: 100px;
+    width: 75%;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+.card{
+    margin-top: 10px;
+    margin-bottom:10px;
+}
