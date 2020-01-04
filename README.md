@@ -2,21 +2,28 @@
 
 # Create his own dash server
 
+
+Composer helps you declare, manage, and install dependencies of PHP projects.
+
+See https://getcomposer.org/ for more information and documentation.
+
+
 ## Create the MPD file
 
 Download ffmpeg with
 
 sudo apt-get install ffmpeg
 
+`Insérez du code`
 
-mkdir serverVideo
-cd serverVideo
+`mkdir serverVideo`
+`cd serverVideo`
 
 Paste your video in.video into the directory serverVideo
 
 Create the audio file with thes command:
 
-ffmpeg -i in.video -vn -acodec libvorbis -ab 128k -dash 1 my_audio.webm
+`ffmpeg -i in.video -vn -acodec libvorbis -ab 128k -dash 1 my_audio.webm`
 
 Create then the video files using different quality
 
