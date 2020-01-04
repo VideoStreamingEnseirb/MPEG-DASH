@@ -1,25 +1,29 @@
 # MPEG-DASH
 
-# Create his own dash server
 
 
-Composer helps you declare, manage, and install dependencies of PHP projects.
+MPEG-DASH is an adaptive bitrate streaming technique that enables high quality streaming of media content over the Internet delivered from conventional HTTP web servers.
 
-See https://getcomposer.org/ for more information and documentation.
+See our demo to have a look on the way of work of MPEG DASH.
 
+## Use a dash player for his website
 
-## Create the MPD file
+## Create his own dash server
 
-Download ffmpeg with
+You will need ffmpeg, whis is a tool for handling video, audio, and other multimedia files and streams
 
-sudo apt-get install ffmpeg
+Download and install ffmpeg with:
 
-`Insérez du code`
+`sudo apt-get install ffmpeg`
 
-`mkdir serverVideo`
+### Create the MPD file
+
+Go into your working directory:
+
+`mkdir serverVideo`  
 `cd serverVideo`
 
-Paste your video in.video into the directory serverVideo
+Paste your file `in.video` into the directory serverVideo
 
 Create the audio file with thes command:
 
@@ -49,9 +53,32 @@ ffmpeg \
   -adaptation_sets "id=0,streams=0,1,2,3 id=1,streams=4" \
   my_video_manifest.mpd
 
+### Set up the server
+
+Create a folder representating your server, named serveurvideo. You can paste your MPD in and the different fragment related in the MPD. 
+
+After having install your Apache2 server, put the precedent folder in /var/www .
+
+Don't forget to allow all the origin modifying the file /etc/apache2/apache2.conf with:
+
+<Directory /var/www/>
+	Options Indexes FollowSymLinks
+	AllowOverride all
+	Allow from all
+	Require all granted
+	Header set Access-Control-Allow-Origin "*"
+	Header set Access-Control-Allow-Headers "*"
+	Header set Access-Control-Allow-Methods "*"
+	Header set Access-Control-Request-Headers "*"
+</Directory>
+
+After modifying your server configuration, restart apache2 server with:
+sudo systemctl reload apache2
+sudo systemctl restart apache2
+
 ## Collaborators
 
-Julien Mathet
-Florian Coasnes
-Bruno Besse
-Lila Martin
+Julien Mathet  
+Florian Coasnes  
+Bruno Besse  
+Lila Martin  
