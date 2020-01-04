@@ -104,4 +104,4 @@ You can integrate the player simply by adding those lines:
 Julien Mathet  
 Florian Coasnes  
 Bruno Besse  
-Lila Martin  
+Lilia Martin  
