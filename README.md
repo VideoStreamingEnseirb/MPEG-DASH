@@ -6,7 +6,7 @@ See our demo to have a look on the way of work of MPEG DASH.
 
 ## Create his own dash server
 
-You will need ffmpeg, whis is a tool for handling video, audio, and other multimedia files and streams. Have a look on their website for more information: https://www.ffmpeg.org
+You will need ffmpeg, which is a tool for handling video, audio, and other multimedia files and streams. Have a look to their website for more information: https://www.ffmpeg.org
 
 Download and install ffmpeg with:
 
@@ -21,11 +21,11 @@ Go into your working directory:
 
 Paste your file `in.video` into the folder serverVideo
 
-Create the audio file with thes command:
+Create the audio file with this command:
 
 `ffmpeg -i in.video -vn -acodec libvorbis -ab 128k -dash 1 my_audio.webm` 
 
-Create then the video files in different quality:
+Create then the video files in different qualities:
 
 `ffmpeg -i presentation-filiere-telecommunications.mp4 -c:v libvpx-vp9 -keyint_min 150 \  
 -g 150 -tile-columns 4 -frame-parallel 1  -f webm -dash 1 \  
@@ -53,7 +53,7 @@ Read
 
 ### Set up the server in local
 
-Create a folder representating your server, named serverVideo. You can paste your MPD in and the different video fragment related in the MPD. 
+Create a folder representating your server, named serverVideo. You can paste your MPD in and the different video fragments related in the MPD. 
 
 After having install your Apache2 server, put the precedent folder in /var/www .
 
