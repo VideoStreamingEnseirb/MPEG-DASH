@@ -59,16 +59,17 @@ After having install your Apache2 server, put the precedent folder in /var/www .
 
 If you have a problem with the CORS, don't forget to allow all the origin modifying the file /etc/apache2/apache2.conf with:
 
-<Directory /var/www/>  
-	Options Indexes FollowSymLinks  
-	AllowOverride all  
-	Allow from all  
-	Require all granted  
-	Header set Access-Control-Allow-Origin "*"  
-	Header set Access-Control-Allow-Headers "*" 
-	Header set Access-Control-Allow-Methods "*"  
-	Header set Access-Control-Request-Headers "*"  
-</Directory>
+
+    <Directory /var/www/>  
+      Options Indexes FollowSymLinks  
+      AllowOverride all  
+      Allow from all  
+      Require all granted  
+      Header set Access-Control-Allow-Origin "*"  
+      Header set Access-Control-Allow-Headers "*" 
+      Header set Access-Control-Allow-Methods "*"  
+      Header set Access-Control-Request-Headers "*"  
+    </Directory>
 
 After modifying your server configuration, restart apache2 server with:  
 `sudo systemctl reload apache2`  
@@ -76,8 +77,27 @@ After modifying your server configuration, restart apache2 server with:
 
 ## Use a dash player for his website
 
-![Dashjs](https://cloud.githubusercontent.com/assets/2762250/7824984/985c3e76-03bc-11e5-807b-1402bde4fe56.png)  
+![Dashjs](https://cloud.githubusercontent.com/assets/2762250/7824984/985c3e76-03bc-11e5-807b-1402bde4fe56.png)(https://github.com/Dash-Industry-Forum/dash.js)  
 We used the library DashJS to settle our dash player. Have a look on their github: https://github.com/Dash-Industry-Forum/dash.js
+
+You can integrate the player simply by adding those lines:
+
+
+    <script src="https://cdn.dashjs.org/latest/dash.all.min.js"></script>
+    ...
+    <style>
+        video {
+          width: 640px;
+          height: 360px;
+        }
+    </style>
+    ...
+    <body>
+      <div>
+          <video data-dashjs-player autoplay src="https://dash.akamaized.net/envivio/EnvivioDash3/manifest.mpd" controls></video>
+      </div>
+    </body>
+
 
 ## Collaborators
 
