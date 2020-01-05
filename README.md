@@ -55,25 +55,36 @@ Read
 
 Create a folder representating your server, named serverVideo. You can paste your MPD in and the different video fragments related in the MPD. 
 
-After having install your Apache2 server, put the precedent folder in /var/www .
+After having install your Apache2 server, put the precedent folder in `/var/www` .
 
-If you have a problem with the CORS, don't forget to allow all the origin modifying the file /etc/apache2/apache2.conf with:
+If you have a problem with the CORS, don't forget to allow all the origin modifying the file `/etc/apache2/apache2.conf` with:
 
-
-    <Directory /var/www/>  
-      Options Indexes FollowSymLinks  
-      AllowOverride all  
-      Allow from all  
-      Require all granted  
-      Header set Access-Control-Allow-Origin "*"  
-      Header set Access-Control-Allow-Headers "*" 
-      Header set Access-Control-Allow-Methods "*"  
-      Header set Access-Control-Request-Headers "*"  
+```
+    <Directory />
+	    Options FollowSymLinks
+	    AllowOverride all
+	    Require all granted
     </Directory>
+    <Directory /var/www/>  
+        Options Indexes FollowSymLinks  
+        AllowOverride all  
+        Allow from all  
+        Require all granted  
+        Header set Access-Control-Allow-Origin "*"  
+        Header set Access-Control-Allow-Headers "*" 
+        Header set Access-Control-Allow-Methods "*"  
+        Header set Access-Control-Request-Headers "*"  
+    </Directory>
+```
+    
+Activate header module
+`a2enmod headers`
 
 After modifying your server configuration, restart apache2 server with:  
 `sudo systemctl reload apache2`  
 `sudo systemctl restart apache2`
+
+(Source: https://enable-cors.org/server_apache.html)
 
 ## Use a dash player for his website
 
