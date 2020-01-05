@@ -48,9 +48,9 @@
                         </p>
                        <p>    
 
-                        Dynamic Adaptive Streaming over HTTP, or MPEG-DASH is an adaptive streaming for media content on internet. It is an international standard since November 2011. It has been developed by the collaboration of almost a dozen organizations. It is based on the derivation of content in several versions having distinct quality and characteristics and then cut into short segments. A manifest file in xml format (the Media Presentation Description (MPD)) gives the client the information necessary to request each segment individually from conventional HTTP web servers. <br>
-                        The behavior of the client isn’t normalized, this way the provider of the service can adapt it to its needs. In practice, the choice of an adaptive bitrate streaming is ever done, so the selection of each segment is done by the client while the content is being played by choosing the maximum bit rate that avoids stalls or rebuffering events. This method adapts the stream to the network conditions when changing, and provides high quality streaming. The use of HTTP makes possible to rely on the existing web infrastructure and the existing network libraries on devices connected to the Internet. <br>
-                        The main advantage of using MPEG-DASH is the quality it provides, while the main disadvantage is that it is not natively supported by some browsers and devices like IE&#x3C;11 or iOS.
+                       Dynamic Adaptive Streaming over HTTP, or MPEG-DASH is an adaptive streaming for media content on internet. It is an international standard since November 2011. It has been developed by the collaboration of almost a dozen organizations. It is based on the derivation of content in several versions having distinct quality and characteristics and then cut into short segments. A manifest file in xml format (the Media Presentation Description (MPD)) gives the client the information necessary to request each segment individually from conventional HTTP web servers. <br>
+                       The behavior of the client isn’t normalized, this way the provider of the service can adapt it to its needs. In practice, the choice of an adaptive bitrate streaming is ever done, so the selection of each segment is done by the client while the content is being played by choosing the maximum bit rate that avoids stalls or rebuffering events. This method adapts the stream to the network conditions when changing, and provides high quality streaming. The use of HTTP makes possible to rely on the existing web infrastructure and the existing network libraries on devices connected to the Internet. <br>
+                       The main advantage of using MPEG-DASH is the quality it provides, while the main disadvantage is that it is not natively supported by some browsers and devices like IE&#x3C;11 or iOS.
 
                        </p>
                     </div>
@@ -64,6 +64,7 @@
                         The network layer is the same for both possibilities : IP. It is on the transport layer that the protocol stack splits in two : <br>
                         - The connected version uses TCP as transport layer, followed by TLS 1.2 for the security layer and finally HTTP/2 for the application layer. <br>
                         - The non-connected version uses UDP as transport layer, combined with QUIC which extends itself from the transport layer to the application layer, which is shared with HTTP/2 API.
+                        <br>
                         <br>
                         Links to the differents RFCs : <br>
                         - <a href="https://www.rfc-editor.org/info/rfc793">TCP : Transmission Control Protocol</a> <br>
@@ -119,6 +120,7 @@
 	           		URL MDP file : 
 	           		<a href="http://rdmedia.bbc.co.uk/dash/ondemand/testcard/1/client_manifest-events.mpd">http://rdmedia.bbc.co.uk/dash/ondemand/testcard/1/client_manifest-events.mpd</a>
 	           	</div>
+                <br>
             	<div id="container">
 			        <div class="video-container" id="colonne1">
 			            <video data-dashjs-player autoplay controls="true"></video>
@@ -185,6 +187,9 @@
       				<code>
 				        test
       				</code>
+
+                <h5 class="card-title">Link to GitHub repository</h5>
+      				<a href="https://github.com/VideoStreamingEnseirb/MPEG-DASH.git">GitHub repository</a>
             </div>
         </div>
     </div>
