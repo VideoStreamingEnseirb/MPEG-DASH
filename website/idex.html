@@ -6,6 +6,9 @@
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="style.css">
     <title>MPEG-DASH Streaming Protocol</title>
+    <!-- Demo scripts -->
+    <script src="../demo/sourcedash/dash.all.debug.js"></script>
+    <script class="code" src="../demo/index_remote_server.js"></script>
 </head>
 
 <body>
@@ -33,7 +36,7 @@
         <div id="presentation" class="anchor"></div>
         <div class="card">
             <div class="card-header">
-                Protocol Presentation
+                <h2> Protocol Presentation </h2>
             </div>
             <div class="card-body">
                 <h5 class="card-title">MPEG-DASH</h5>
@@ -100,30 +103,88 @@
                         An important point is that the following segments are requested, received and processed while playing the previous ones. This allows to display the content without interruption and to adapt in real time to the network.
 
                         </p>
-                    </div>
-                    
-
-
+                    </div>             
                 </p>
             </div>
         </div>
+    </div>
+
         <div id="demonstration" class="anchor"></div>
         <div class="card" id="">
             <div class="card-header">
-                Demonstration
+                <h2> Demonstration </h2>
             </div>
             <div class="card-body">
-                <p class="card-text">Bon courage pour cette partie.</p>
+	           	<div class="card-text">
+	           		URL MDP file : 
+	           		<a href="http://rdmedia.bbc.co.uk/dash/ondemand/testcard/1/client_manifest-events.mpd">http://rdmedia.bbc.co.uk/dash/ondemand/testcard/1/client_manifest-events.mpd</a>
+	           	</div>
+            	<div id="container">
+			        <div class="video-container" id="colonne1">
+			            <video data-dashjs-player autoplay controls="true"></video>
+			        </div>
+			        <fieldset id="colonne2">
+			            <h5>Video Fragment</h5>
+			            <div id="trace" placeholder="Trapped events will be displayed here"></div>
+			        </fieldset>
+			        <fieldset id="colonne3">
+			            <h5>Audio Fragment</h5>
+			            <div id="trace2" placeholder="Trapped events will be displayed here"></div>
+			        </fieldset>
+			        <fieldset>
+			        	<br>
+			            <h5>Configuration parameters</h5>
+			            <div>
+			                Max stable buffer (seconds): <input type="number" id="stableBuffer" value="20"> (Current Buffer: <span
+			                    id="currentBufferLevel" )>0</span> seconds)
+			                <div class="description">The time that the internal buffer target will be set to post startup/seeks (NOT
+			                    top quality).</div>
+			            </div>
+			            <div>
+			                Buffer lenght at top quality (seconds): <input type="number" id="topQualityBuffer" value="20">
+			                <div class="description">The time that the internal buffer target will be set to once playing the top
+			                    quality.</div>
+			            </div>
+			            <div>
+			                Max selectable bitrate (Kbps): <input type="number" id="maxBitrate" value="5000"> (Downloading bitrate:
+			                <span id="reportedBitrate" )>0</span>)
+			                <div class="description">The maximum bitrate selectable by the ABR algorithms will choose. Use -1 for no
+			                    limit.</div>
+			            </div>
+			            <div>
+			                Min selectable bitrate (Kbps): <input type="number" id="minBitrate" value="-1">
+			                <div class="description">The minimum bitrate that the ABR algorithms will choose. Use -1 for no limit.
+			                </div>
+			            </div>
+			            <div>
+			                Limit Bitrate By Portal Size: <input type="checkbox" id="limitByPortal">
+			                <div class="description">If true, the size of the video portal will limit the max chosen video
+			                    resolution.</div>
+			            </div>
+			            <div>
+			                <button onclick="applySettings()">Apply changes</button>
+			            </div>
+			        </fieldset>
+			    </div>
+			    <script>
+			        document.addEventListener("DOMContentLoaded", function () {
+			            init();
+			        });
+			    </script>
             </div>
         </div>
+
         <div id="howto" class="anchor"></div>
+
         <div class="card">
             <div class="card-header">
-                HowTo
+                <h2> HowTo </h2>
             </div>
             <div class="card-body">
                 <h5 class="card-title">0. Prerequisites</h5>
-                <p class="card-text">Blabla</p>
+      				<code>
+				        test
+      				</code>
             </div>
         </div>
     </div>

@@ -1,10 +1,7 @@
 var player;
 function init() {
     var video;
-    var url = "http://localhost/serveurvideo/my_video_manifest.mpd";
-
-    //var url = "http://rdmedia.bbc.co.uk/dash/ondemand/testcard/1/client_manifest-events.mpd";
-
+    var url = "http://rdmedia.bbc.co.uk/dash/ondemand/testcard/1/client_manifest-events.mpd";
 
     video = document.querySelector("video");
     player = dashjs.MediaPlayer().create();
