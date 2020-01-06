@@ -49,8 +49,13 @@
                         </p>
                        <p>    
 
-                       Dynamic Adaptive Streaming over HTTP, or MPEG-DASH is an adaptive streaming for media content on internet. It is an international standard since November 2011. It has been developed by the collaboration of almost a dozen organizations. It is based on the derivation of content in several versions having distinct quality and characteristics and then cut into short segments. A manifest file in xml format (the Media Presentation Description (MPD)) gives the client the information necessary to request each segment individually from conventional HTTP web servers. <br>
-                       The behavior of the client isn’t normalized, this way the provider of the service can adapt it to its needs. In practice, the choice of an adaptive bitrate streaming is ever done, so the selection of each segment is done by the client while the content is being played by choosing the maximum bit rate that avoids stalls or rebuffering events. This method adapts the stream to the network conditions when changing, and provides high quality streaming. The use of HTTP makes possible to rely on the existing web infrastructure and the existing network libraries on devices connected to the Internet. <br>
+                       Dynamic Adaptive Streaming over HTTP, or MPEG-DASH is an adaptive streaming for media content on internet.
+					   It is an international standard since November 2011, created by the Moving Picture Experts Group (MPEG) with the collaboration of almost a dozen organizations.
+					   It is based on the derivation of content in several versions having distinct quality and characteristics and then cut into short segments.
+					   A manifest file in .xml format (the Media Presentation Description (MPD)) gives the client the information necessary to request each segment individually from conventional HTTP web servers. <br>
+                       The behavior of the client isn’t normalized, this way the provider of the service can adapt it to its needs.
+					   In practice, the choice of an adaptive bitrate streaming is ever done, so the selection of each segment is done by the client while the content is being played by choosing the maximum bit rate that avoids stalls or rebuffering events.
+					   This method adapts the stream to the network conditions when changing, and provides high quality streaming. The use of HTTP makes possible to rely on the existing web infrastructure and the existing network libraries on devices connected to the Internet. <br>
                        The main advantage of using MPEG-DASH is the quality it provides, while the main disadvantage is that it is not natively supported by some browsers and devices like IE&#x3C;11 or iOS.
 
                        </p>
@@ -67,7 +72,7 @@
                         - The non-connected version uses UDP as transport layer, combined with QUIC which extends itself from the transport layer to the application layer, which is shared with HTTP/2 API.
                         <br>
                         <br>
-                        Links to the differents RFCs : <br>
+                        For more information about IP, TCP, UDP, TLS, find it in the different RFCs: <br>
                         - <a href="https://www.rfc-editor.org/info/rfc793">TCP : Transmission Control Protocol</a> <br>
                         - <a href="https://www.rfc-editor.org/info/rfc768">UDP : User Datagram Protocol</a> <br>
                         - <a href="https://www.rfc-editor.org/info/rfc5246">TLS v1.2 : Transport Layer Security version 1.2</a> <br>
@@ -91,20 +96,75 @@
                         </p>
                     </div>
 
+					<h5>General Fonctionment</h5>
+
                     <div class="texte-illustration">
                         <p class="flotted">
-                            <img src="../images/Fonctionment.jpg" alt="Fonctionment" width=650px>
+                            <img src="../images/Fonctionment.jpg" alt="Fonctionment" width=600px>
                         </p>
                         <p>
                                                 
-                        Playback of content via MPEG-DASH is as follows.
-                        First, the client requests the Media Presentation Description (MPD) associated with the desired content from the MPD server and receives it (1).
-                        This mpd is parsed by the client and provides it with the data necessary for the acquisition and processing of the segments(1).
-                        The HTTP client then begins to request one by one the segments from the servers concerned, taking into account the network conditions for the choice of bit rate and quality in order to get the higher quality and bit rate possible avoiding stalls or rebuffering(3).
-                        The segments are parsed (4) and then played by the player(5). Everything is supervised by a heuristic control(2).
-                        An important point is that the following segments are requested, received and processed while playing the previous ones. This allows to display the content without interruption and to adapt in real time to the network.
+                        Playback of content via MPEG-DASH is as follows : 
+						</p>
+						<div class="texte-illustration">
+							<p class="flotteg">
+								<img src="../images/1.png" alt="MPD" width=40px>
+							</p>
+							<p>
+							First, the client requests the Media Presentation Description (MPD) associated with the desired content from the MPD server and receives it.
+							This MPD is parsed by the client and provides it with the data necessary for the acquisition and processing of the segments.
 
-                        </p>
+							</p>
+						</div>
+
+						<div class="texte-illustration">
+							<p class="flotteg">
+								<img src="../images/2.png" alt="MPD" width=40px>
+							</p>
+							<p>
+							Everything is supervised by a heuristic control.
+
+							</p>
+						</div>
+
+						<div class="texte-illustration">
+							<p class="flotteg">
+								<img src="../images/3.png" alt="MPD" width=40px>
+							</p>
+							<p>
+							The HTTP client then begins to request one by one the segments from the servers concerned, taking into account the network conditions
+								for the choice of bit rate and quality in order to get the higher quality and bit rate possible avoiding stalls or rebuffering.
+
+							</p>
+						</div>
+
+						<div class="texte-illustration">
+							<p class="flotteg">
+								<img src="../images/4.png" alt="MPD" width=40px>
+							</p>
+							<p>
+							The segments are parsed using a segment parser.
+
+							</p>
+						</div>
+
+						<div class="texte-illustration">
+							<p class="flotteg">
+								<img src="../images/5.png" alt="MPD" width=40px>
+							</p>
+							<p>
+							The segments are finally played by the player.
+
+							</p>
+						</div>
+
+						<p>
+
+						An important point is that the following segments are requested, received and processed while playing the previous ones.
+							This allows to display the content without interruption and to adapt in real time to the network.
+
+						</p>
+
                     </div>             
                 </p>
             </div>
