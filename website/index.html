@@ -64,39 +64,36 @@
 					<h5>Protocol stack</h5>
                     <div class="texte-illustration">
                         <p class="flotted">
-                            <img src="../images/Protocol stack.jpg" alt="Protocol stack" width=450px>
+                            <img src="../images/Protocol stack.jpg" alt="Protocol stack" width=480px>
                         </p>
                         <p>
-                        The protocol stack of MPEG-DASH can be divided into two possibilities : one connected and one not connected. 
-                        The network layer is the same for both possibilities : IP. It is on the transport layer that the protocol stack splits in two : <br>
+                        The protocol stack of MPEG-DASH can be divided into two possibilities: one connected and one not connected. 
+                        The network layer is the same for both possibilities: IP. It is on the transport layer that the protocol stack splits in two: <br>
                         - The connected version uses TCP as transport layer, followed by TLS 1.2 for the security layer and finally HTTP/2 for the application layer. <br>
                         - The non-connected version uses UDP as transport layer, combined with QUIC which extends itself from the transport layer to the application layer, which is shared with HTTP/2 API.
                         <br>
                         <br>
                         For more information about IP, TCP, UDP, TLS, find it in the different RFCs: <br>
-                        - <a href="https://www.rfc-editor.org/info/rfc793">TCP : Transmission Control Protocol</a> <br>
-                        - <a href="https://www.rfc-editor.org/info/rfc768">UDP : User Datagram Protocol</a> <br>
-                        - <a href="https://www.rfc-editor.org/info/rfc5246">TLS v1.2 : Transport Layer Security version 1.2</a> <br>
-                        - <a href="https://www.rfc-editor.org/info/rfc791">IPv4 : Internet Protocol version 4</a> <br>
+						- <a href="https://www.rfc-editor.org/info/rfc791">IPv4: Internet Protocol version 4</a> <br>
+                        - <a href="https://www.rfc-editor.org/info/rfc793">TCP: Transmission Control Protocol</a> <br>
+                        - <a href="https://www.rfc-editor.org/info/rfc768">UDP: User Datagram Protocol</a> <br>
+                        - <a href="https://www.rfc-editor.org/info/rfc5246">TLS v1.2: Transport Layer Security version 1.2</a> <br>
+                        
                     
                         </p>
                     </div>
 
 					<h5>Media Presentation Description</h5>
-                    <div class="texte-illustration">
-                        <p class="flotteg">
-                            <img src="../images/MPD schema.jpg" alt="MPD" width=700px>
-                        </p>
-                        
+                        <img src="../images/MPD schema.jpg" alt="MPD" width=1000px>
+                        <br>
                         <p>
-                        Media Presentation Description (or MPD) is an XML document containing information about the data segments. It is divided into multiple parts : <br>
-                        - A period ID : determines the type of information (audio, video, subtitle) <br>
-                        - An adaptation set : determines the quality and bitrate of the segment <br>
-                        - A representation : contains all the segment information <br>
-                        - A segment information : contains the URL of each segment and provides more information about the segment in itself (beginning time, end time, …) <br>
+                        Media Presentation Description (or MPD) is an XML document containing information about the data segments. It is divided into multiple parts: <br>
+                        - A period ID: determines the type of information (audio, video, subtitle) <br>
+                        - An adaptation set: determines the quality and bitrate of the segment <br>
+                        - A representation: contains all the segment information <br>
+                        - A segment information: contains the URL of each segment and provides additional information about the segment in itself (beginning time, end time, …) <br>
                         With a MPD, it is easy to select the segment wanted, with the quality/bitrate/… needed.
                         </p>
-                    </div>
 
 					<h5>General Fonctionment</h5>
 
@@ -106,7 +103,7 @@
                         </p>
                         <p>
                                                 
-                        Playback of content via MPEG-DASH is as follows : 
+                        Playback of content via MPEG-DASH is as follows: 
 						</p>
 						<div class="texte-illustration">
 							<p class="flotteg">
@@ -180,7 +177,7 @@
             </div>
             <div class="card-body">
 	           	<div class="card-text">
-	           		URL MDP file : 
+	           		URL MDP file: 
 	           		<a href="http://rdmedia.bbc.co.uk/dash/ondemand/testcard/1/client_manifest-events.mpd">http://rdmedia.bbc.co.uk/dash/ondemand/testcard/1/client_manifest-events.mpd</a>
 	           	</div>
                 <br>
