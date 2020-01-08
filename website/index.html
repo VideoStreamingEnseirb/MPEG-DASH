@@ -280,56 +280,62 @@
 			</div>
 
 			<div class="card-body">
-					<h3>Create his own dash server</h3>
-					<div class="texte-illustration">
+				<h3>Server Part Deployment</h3>
+				<div class="texte-illustration">
+					<h5> Prerequisities </h5>
+					<p>
+						You will need ffmpeg, which is a tool for handling video, audio, and other multimedia files
+						and streams. Have a look to their website for more information: <a
+							href="https://www.ffmpeg.org">https://www.ffmpeg.org</a>
 
-						<p>
-							You will need ffmpeg, which is a tool for handling video, audio, and other multimedia files
-							and streams. Have a look to their website for more information: <a href="https://www.ffmpeg.org">https://www.ffmpeg.org</a>
-	
-							<br>
-							<br>
-							Download and install ffmpeg with:
-							<br>
-							<br>
-							<code>sudo apt-get install ffmpeg</code>
-						</p>
-						<h5> Create MPD file and DASHable segments</h5>
-						<p>
-							Go into your working directory:
-							<br>
-							<br>
-							<code>serverVideo</code> 
-							<br>
-							<code>cd serverVideo</code>
-							<br>
-							<br>
-							Paste your file `in.video` into the folder serverVideo
-							<br>
-							<br>
-							Create the audio file with this command:
-							<br>
-							<br>
-						<code> ffmpeg -i in.video -vn -acodec libvorbis -ab 128k -dash 1 my_audio.webm</code> 
-							<br>
-							<br>
-							Create then the dashable segment in different qualities:
-							<br>
+						<br>
+						<br>
+						Download and install ffmpeg with:
+						<br>
+						<br>
+						<code>sudo apt-get install ffmpeg</code>
+						<br>
+						<br>
+						If you want to make it locally, make sure you have an HTTP server installed in your computer, as
+						Apache2.
+					</p>
+					<h5> Create MPD file and DASHable segments</h5>
+					<p>
+						Go into your working directory:
+						<br>
+						<br>
+						<code>serverVideo</code>
+						<br>
+						<code>cd serverVideo</code>
+						<br>
+						<br>
+						Paste your file <code>in.video</code> (the video you want to dash) into the folder serverVideo.
+						<br>
+						<br>
+						Create the audio file with this command:
+						<br>
+						<br>
+						<code> ffmpeg -i in.video -vn -acodec libvorbis -ab 128k -dash 1 my_audio.webm</code>
+						<br>
+						<br>
+						Create then the dashable segment in different qualities:
+						<br>
 						<code> ffmpeg -i presentation-filiere-telecommunications.mp4 -c:v libvpx-vp9 -keyint_min 150 \<br>
 							-g 150 -tile-columns 4 -frame-parallel 1 -f webm -dash 1 \<br>
 							-an -vf scale=160:90 -b:v 250k -dash 1 video_160x90_250k.webm \<br>
 							-an -vf scale=320:180 -b:v 500k -dash 1 video_320x180_500k.webm \<br>
 							-an -vf scale=640:360 -b:v 750k -dash 1 video_640x360_750k.webm \<br>
 							-an -vf scale=640:360 -b:v 1000k -dash 1 video_640x360_1000k.webm \<br>
-							-an -vf scale=1280:720 -b:v 1500k -dash 1 video_1280x720_1500k.webm</code> 
-							<br>
-							<br>
-							With this command line, you don't fragment the video, but you create 5 videos in different format. Check the options available in ffmpeg to see the fragmentation.
-							<br>
-							<br>
-							Create the MPD file:
-							<br>
-							<code>
+							-an -vf scale=1280:720 -b:v 1500k -dash 1 video_1280x720_1500k.webm</code>
+						<br>
+						<br>
+						With this command line, you don't fragment the video, but you create 5 videos in different
+						format. Check the options available in ffmpeg to see the fragmentation.
+						<br>
+						<br>
+						Create the MPD file:
+						<br>
+						<code>
 							ffmpeg \<br>
 							-f webm_dash_manifest -i video_160x90_250k.webm \<br>
 							-f webm_dash_manifest -i video_320x180_500k.webm \<br>
@@ -345,10 +351,27 @@
 						<br>
 
 					</p>
-					</div>
+				</div>
+				<h3>Player Part Deployment</h3>
+				<div>
+					<h5> Prerequisities </h5>
+					We used the library DashJS to settle our dash player. Have a look on their github:
+					https://github.com/Dash-Industry-Forum/dash.js
 
-					<h5 class="card-title">Link to GitHub repository</h5>
-					<a href="https://github.com/VideoStreamingEnseirb/MPEG-DASH.git">GitHub repository</a>
+					<h5> Integrate a dash player in your website</h5>
+
+					You can integrate the dash player simply by adding those lines:
+					<br>
+					<img src="../images/codehtml.png" >
+					<br>
+					<br>
+					
+					Thanks to DashJS library, you can modify option of the dash player, have a look to our demo in our github.
+
+				</div>
+
+				<h3 class="card-title">Link to GitHub repository</h3>
+				<a href="https://github.com/VideoStreamingEnseirb/MPEG-DASH.git">GitHub repository</a>
 			</div>
 		</div>
 	</div>
