@@ -324,13 +324,13 @@
 							-an -vf scale=1280:720 -b:v 1500k -dash 1 video_1280x720_1500k.webm</code> 
 							<br>
 							<br>
-							With this command line, you don't fragment the video, but you create 5 videos in different format.
+							With this command line, you don't fragment the video, but you create 5 videos in different format. Check the options available in ffmpeg to see the fragmentation.
 							<br>
 							<br>
 							Create the MPD file:
 							<br>
 							<code>
-							ffmpeg \
+							ffmpeg \<br>
 							-f webm_dash_manifest -i video_160x90_250k.webm \<br>
 							-f webm_dash_manifest -i video_320x180_500k.webm \<br>
 							-f webm_dash_manifest -i video_640x360_750k.webm \<br>
