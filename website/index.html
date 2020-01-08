@@ -285,7 +285,8 @@
 
 						<p>
 							You will need ffmpeg, which is a tool for handling video, audio, and other multimedia files
-							and streams. Have a look to their website for more information: https://www.ffmpeg.org
+							and streams. Have a look to their website for more information: <a href="https://www.ffmpeg.org">https://www.ffmpeg.org</a>
+	
 							<br>
 							<br>
 							Download and install ffmpeg with:
@@ -293,7 +294,7 @@
 							<br>
 							<code>sudo apt-get install ffmpeg</code>
 						</p>
-						<h5> Create the MPD file </h5>
+						<h5> Create MPD file and DASHable segments</h5>
 						<p>
 							Go into your working directory:
 							<br>
@@ -312,7 +313,7 @@
 						<code> ffmpeg -i in.video -vn -acodec libvorbis -ab 128k -dash 1 my_audio.webm</code> 
 							<br>
 							<br>
-							Create then the video files in different qualities:
+							Create then the dashable segment in different qualities:
 							<br>
 						<code> ffmpeg -i presentation-filiere-telecommunications.mp4 -c:v libvpx-vp9 -keyint_min 150 \<br>
 							-g 150 -tile-columns 4 -frame-parallel 1 -f webm -dash 1 \<br>
@@ -321,6 +322,9 @@
 							-an -vf scale=640:360 -b:v 750k -dash 1 video_640x360_750k.webm \<br>
 							-an -vf scale=640:360 -b:v 1000k -dash 1 video_640x360_1000k.webm \<br>
 							-an -vf scale=1280:720 -b:v 1500k -dash 1 video_1280x720_1500k.webm</code> 
+							<br>
+							<br>
+							With this command line, you don't fragment the video, but you create 5 videos in different format.
 							<br>
 							<br>
 							Create the MPD file:
@@ -336,9 +340,11 @@
 							-map 0 -map 1 -map 2 -map 3 -map 4 \<br>
 							-f webm_dash_manifest \<br>
 							-adaptation_sets "id=0,streams=0,1,2,3 id=1,streams=4" \<br>
-							my_video_manifest.mpd`<br>
+							my_video_manifest.mpd<br>
 						</code>
-						</p>
+						<br>
+
+					</p>
 					</div>
 
 					<h5 class="card-title">Link to GitHub repository</h5>
