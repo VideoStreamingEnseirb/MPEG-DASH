@@ -91,14 +91,16 @@
 							<br>
 							<br>
 							For more information about IP, TCP, UDP, TLS, find it in the different RFCs: <br>
-							- <a href="https://www.rfc-editor.org/info/rfc791">IPv4: Internet Protocol version 4</a>
-							<br>
-							- <a href="https://www.rfc-editor.org/info/rfc793">TCP: Transmission Control Protocol</a>
-							<br>
-							- <a href="https://www.rfc-editor.org/info/rfc768">UDP: User Datagram Protocol</a> <br>
-							- <a href="https://www.rfc-editor.org/info/rfc5246">TLS v1.2: Transport Layer Security
-								version 1.2</a> <br>
+							<ul>
+								<li><a href="https://www.rfc-editor.org/info/rfc791">IPv4: Internet Protocol version 4</a></li>
+							
+								<li><a href="https://www.rfc-editor.org/info/rfc793">TCP: Transmission Control Protocol</a></li>
 
+							<li><a href="https://www.rfc-editor.org/info/rfc768">UDP: User Datagram Protocol</a> </li>
+							
+							<li><a href="https://www.rfc-editor.org/info/rfc5246">TLS v1.2: Transport Layer Security
+								version 1.2</a> </li>
+							</ul>
 
 						</p>
 					</div>
@@ -109,11 +111,12 @@
 					<p>
 						Media Presentation Description (or MPD) is an XML document containing information about the data
 						segments. It is divided into multiple parts: <br>
-						- A period ID: determines the type of information (audio, video, subtitle) <br>
-						- An adaptation set: determines the quality and bitrate of the segment <br>
-						- A representation: contains all the segment information <br>
-						- A segment information: contains the URL of each segment and provides additional information
-						about the segment in itself (beginning time, end time, …) <br>
+						<ul>
+							<li> A period ID: determines the type of information (audio, video, subtitle)</li>
+							<li> An adaptation set: determines the quality and bitrate of the segment</li>
+							<li> A representation: contains all the segment information</li>
+							<li> A segment information: contains the URL of each segment and provides additional information about the segment in itself (beginning time, end time, …)</li>
+						</ul>
 						With a MPD, it is easy to select the segment wanted, with the quality/bitrate/… needed.
 					</p>
 
@@ -195,6 +198,40 @@
 					</div>
 					</p>
 				</div>
+
+				<h5>Use Cases</h5>
+
+					<div class="texte-illustration">
+						<p> MPEG-DASH can be use in many cases. Here are a few examples:
+							<ul>
+							  <li>On-Demand, Live and time-shift streaming</li>
+							  <li>Delivery of same content on many screens</li>
+							  <li>Delivery of any multimedia content (2D, graphics, subtitles, text, etc.)</li>
+							  <li>Support of multiple languages and different audio configur</li>
+							</ul>
+						</p>
+					</div>
+
+					<h5>Existing projets</h5>
+
+					<div class="texte-illustration">
+						<p> 
+							<ul>
+							  <li>
+							  	<a href="https://github.com/Dash-Industry-Forum/dash.js/wiki/"> Dash.js </a> (framework for building video and audio players that play back MPEG-DASH content using client-side JavaScript libraries)
+							  </li>
+							  <li>
+							  	<a href="https://github.com/google/shaka-player/"> Shaka </a> (open source dash player from Google)
+							  </li>
+							  <li>
+							  	<a href="https://github.com/bitmovin/libdash"> Libdash </a> (open-source library to use MPEG-DASH standard)
+							  </li>
+							  <li>
+							  	<a href="https://bitmovin.com/video-player"> Bitmovin </a> (Live or on-demand transcoding of video and web-based MPEG-DASH players in HTML5 or Flash)
+							  </li>
+							</ul>
+						</p>
+					</div>
 			</div>
 		</div>
 
@@ -212,7 +249,7 @@
 				<br>
 				<div id="container">
 					<div class="video-container" id="colonne1">
-						<video data-dashjs-player autoplay controls="true"></video>
+						<video data-dashjs-player controls="true"></video>
 					</div>
 					<fieldset id="colonne2">
 						<h5>Video Fragment</h5>
@@ -362,7 +399,7 @@
 					
 					<h5> Integrate a dash player in your website</h5>
 
-					You can integrate the dash player simply by adding those lines: <br><br>
+					You can integrate the dash player simply by adding those lines (in an html file): <br><br>
 
 					<img src="../images/codehtml.png" alt="Dash player integration">
 					<br>
