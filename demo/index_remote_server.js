@@ -120,10 +120,10 @@ function showEvent(e) {
                 //   log("on a :"+ index2 +" pour "+e[index][index2])
                 // }
                 if (e[index]["mediaType"] == "video") {
-                    log("FRAGMENT" + e[index]["index"] + " start to load, FRAGMENT start at " + e[index]["startTime"] + " with the quality " + e[index]["representationId"], 0)
+                    log("FRAGMENT" + e[index]["index"] + " starts to load, FRAGMENT start at " + e[index]["startTime"] + " with the quality " + e[index]["representationId"], 0)
                 }
                 else {
-                    log2("FRAGMENT" + e[index]["index"] + " start to load, FRAGMENT start at " + e[index]["startTime"] + " with the quality " + e[index]["representationId"], 0)
+                    log2("FRAGMENT" + e[index]["index"] + " starts to load, FRAGMENT start at " + e[index]["startTime"] + " with the quality " + e[index]["representationId"], 0)
                 }
             }
 
