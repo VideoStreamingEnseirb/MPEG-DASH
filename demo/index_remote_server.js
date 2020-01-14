@@ -7,6 +7,8 @@ function init() {
     player = dashjs.MediaPlayer().create();
     player.initialize(video, url, true);
 
+    
+
     document.getElementById("trace").innerHTML = "";
     document.getElementById("trace2").innerHTML = "";
     setListener();
@@ -16,6 +18,7 @@ function init() {
     player.on(dashjs.MediaPlayer.events["PLAYBACK_ENDED"], function () {
         clearInterval(eventPoller);
     });
+
 
     var eventPoller = setInterval(function () {
         var streamInfo = player.getActiveStream().getStreamInfo();
@@ -31,6 +34,8 @@ function init() {
             document.getElementById('reportedBitrate').innerText = bitrate + " Kbps";
         }
     }, 1000);
+
+
 }
 
 function log(msg, type) {
@@ -108,7 +113,6 @@ function showEvent(e) {
     //console.log("EVENT RECEIVED: " + e.type);
     //log("EVENT RECEIVED: " + e.type);
     //console.log(e.type)
-    //We double process in order to pretty-print. Only two levels of object properties are exposed.
     if (e.type == "fragmentLoadingStarted") {
         for (var index in e) {
             if (index == "request") {
@@ -116,10 +120,10 @@ function showEvent(e) {
                 //   log("on a :"+ index2 +" pour "+e[index][index2])
                 // }
                 if (e[index]["mediaType"] == "video") {
-                    log("Le FRAGMENT " + e[index]["index"] + " commence à charger, le FRAGMENT commence à " + e[index]["startTime"] + " avec une qualité de " + e[index]["representationId"], 0)
+                    log("FRAGMENT" + e[index]["index"] + " start to load, FRAGMENT start at " + e[index]["startTime"] + " with the quality " + e[index]["representationId"], 0)
                 }
                 else {
-                    log2("Le FRAGMENT " + e[index]["index"] + " commence à charger, le FRAGMENT commence à " + e[index]["startTime"] + " avec une qualité de " + e[index]["representationId"], 0)
+                    log2("FRAGMENT" + e[index]["index"] + " start to load, FRAGMENT start at " + e[index]["startTime"] + " with the quality " + e[index]["representationId"], 0)
                 }
             }
 
@@ -132,10 +136,10 @@ function showEvent(e) {
                 //   log("on a :"+ index2 +" pour "+e[index][index2])
                 // }
                 if (e[index]["mediaType"] == "video") {
-                    log("Le FRAGMENT " + e[index]["index"] + e[index]["mediaType"] + " a fini de charger", 1)
+                    log("FRAGMENT" + e[index]["index"] + e[index]["mediaType"] + " has finished to load", 1)
                 }
                 else {
-                    log2("Le FRAGMENT " + e[index]["index"] + e[index]["mediaType"] + " a fini de charger", 1)
+                    log2("FRAGMENT" + e[index]["index"] + e[index]["mediaType"] + " has finished to load", 1)
                 }
             }
         }
@@ -147,10 +151,10 @@ function showEvent(e) {
                 //   log("on a :"+ index2 +" pour "+e[index][index2])
                 // }
                 if (e[index]["mediaType"] == "video") {
-                    log("Le FRAGMENT " + e[index]["index"] + " a été abandonné", 2)
+                    log("FRAGMENT" + e[index]["index"] + " has been abandoned", 2)
                 }
                 else {
-                    log2("Le FRAGMENT " + e[index]["index"] + " a été abandonné", 2)
+                    log2("FRAGMENT" + e[index]["index"] + " has been abandoned", 2)
                 }
             }
         }
@@ -158,10 +162,10 @@ function showEvent(e) {
 
     else if (e.type == "qualityChangeRequested") {
         if (e["mediaType"] == "video") {
-            log("QUALITY CHANGE: On passe de " + e["oldQuality"] + " à " + e["newQuality"], 3)
+            log("QUALITY CHANGE: We pass from " + e["oldQuality"] + " to " + e["newQuality"], 3)
         }
         else {
-            log2("QUALITY CHANGE: On passe de " + e["oldQuality"] + " à " + e["newQuality"], 3)
+            log2("QUALITY CHANGE: We pass from " + e["oldQuality"] + " to " + e["newQuality"], 3)
         }
 
     }
@@ -169,10 +173,10 @@ function showEvent(e) {
     else if (e.type == "qualityChangeRendered") {
 
         if (e["mediaType"] == "video") {
-            log("QUALITY CHANGE: On passe de " + e["oldQuality"] + " à " + e["newQuality"], 3)
+            log("QUALITY CHANGE: We pass from " + e["oldQuality"] + " to " + e["newQuality"], 3)
         }
         else {
-            log2("QUALITY CHANGE: On passe de " + e["oldQuality"] + " à " + e["newQuality"], 3)
+            log2("QUALITY CHANGE: We pass from " + e["oldQuality"] + " to " + e["newQuality"], 3)
         }
 
     }
