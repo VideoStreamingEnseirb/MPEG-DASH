@@ -317,17 +317,49 @@
 			</div>
 
 			<div class="card-body">
-				<h3>Introduction</h3>
-				<h3>Prerequities</h3>
-				<a href="https://github.com/VideoStreamingEnseirb/MPEG-DASH.git">GitHub repository</a>
+				<h3><li>Player Part Deployment</li></h3>
+				<div>
+					<p>
+						<i>
+							The goal of this part is to reproduce the above demonstration on your own website. 
+						</i>
+					</p>
+					<h5> Prerequisities </h5>
+					We used the library DashJS to settle our dash player via JavaScript and 
+					<a href="https://caniuse.com/#feat=mediasource"> compliant browsers</a>. Have a look on their
+					<a href="https://github.com/Dash-Industry-Forum/dash.js"> GitHub</a> if you want more information. <br> <br>
 
-				<h3>Deployement</h3>
-				<h3>Demonstration</h3>
-				
+					
+					<h5> Integrate a dash player in your website</h5>
 
-
-				<h3>Server Part Deployment</h3>
+					You can integrate the dash player simply by adding those lines (in an html file). You can modify the MPD url to change the video played. <br>
+					<pre>
+					<code>
+&lt;script src="https://cdn.dashjs.org/latest/dash.all.min.js"></script>
+...
+&lt;style>
+    video {
+       width: 640px;
+       height: 360px;
+    }
+&lt;/style>
+...
+&lt;body>
+   &lt;div>
+       &lt;video data-dashjs-player autoplay src="https://dash.akamaized.net/envivio/EnvivioDash3/manifest.mpd" controls>&lt;/video>
+   &lt;/div>
+&lt;/body>
+					</code>
+					</pre>
+				</div>
+				<h3> <li> Server Part Deployment </li></h3>
 				<div class="texte-illustration">
+					<p>
+						<i>
+							The goal of this part is to create a local server containing the MPD server and a CDN server in order to read a local video. 
+							In addition, you will create a MPD file and dashable segments of a selected video.
+						</i>
+					</p>
 					<h5> Prerequisities </h5>
 					<p>
 						You will need ffmpeg, which is a tool for handling video, audio, and other multimedia files
@@ -399,24 +431,9 @@
 
 					</p>
 				</div>
-				<h3>Player Part Deployment</h3>
-				<div>
-					<h5> Prerequisities </h5>
-					We used the library DashJS to settle our dash player. Have a look on their
-					<a href="https://github.com/Dash-Industry-Forum/dash.js"> GitHub</a>. <br> <br>
-
-					
-					<h5> Integrate a dash player in your website</h5>
-
-					You can integrate the dash player simply by adding those lines (in an html file): <br><br>
-
-					<img src="../images/codehtml.png" alt="Dash player integration">
-					<br>
-					<br>
-					
-					Thanks to DashJS library, you can modify option of the dash player, have a look to our demo in our GitHub.
-
-				</div>
+				<br>
+				<h3 class="card-title">Link to GitHub repository</h3>
+				<a href="https://github.com/VideoStreamingEnseirb/MPEG-DASH.git">GitHub repository</a>
 			</div>
 		</div>
 	</div>

@@ -55,11 +55,6 @@ body {
     margin-bottom:10px;
 }
 
-code{
-    background: #E6E6E6;
-    color: black;
-}
-
 video {
     width: 70%;
 }
@@ -104,4 +99,12 @@ fieldset>div {
     width: 45%;
     border: 1px solid black;
     margin: 2%;
+}
+
+code {
+    padding: 1%;
+    display:block;
+    background-color: #EFEFEF;
+    color: black;
+    width: 100%;
 }
