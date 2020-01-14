@@ -87,21 +87,22 @@
 						</p>
 						<p>
 							The protocol stack of MPEG-DASH can be divided into two possibilities: one connected and one
-							not connected.
+							not connected. <br>
 							The network layer is the same for both possibilities: IP. It is on the transport layer that
-							the protocol stack splits in two: <br>
-							- The connected version uses TCP as transport layer, followed by TLS 1.2 for the security
-							layer and finally HTTP/2 for the application layer. <br>
-							- The non-connected version uses UDP as transport layer, combined with QUIC which extends
-							itself from the transport layer to the application layer, which is shared with HTTP/2 API.
-							<br>
-							<br>
-							What is the best choice between UDP and TCP?  <br>
-							 - UDP features simplify data transmission and reduce the end-to-end delay, compared to TCP. Therefore, UDP is suitable for real-time applications,
-							 such as Live video streaming, that are sensitive to delay. <br>
-							 - TCP is more adapted to the traversal of NATs and firewalls, therefore to videos on distant servers.
-							<br>
-							<br>
+							the protocol stack splits in two:
+							<ul>
+							<li>The connected version uses TCP as transport layer, followed by TLS 1.2 for the security
+							layer and finally HTTP/2 for the application layer. </li>
+							<li>The non-connected version uses UDP as transport layer, combined with QUIC which extends
+							itself from the transport layer to the application layer, which is shared with HTTP/2 API.</li>
+							</ul>
+
+							What is the best choice between UDP and TCP?
+							<ul>
+							 <li>UDP features simplify data transmission and reduce the end-to-end delay, compared to TCP. Therefore, UDP is suitable for real-time applications,
+							 such as Live video streaming, that are sensitive to delay. </li>
+							 <li>TCP is more adapted to the traversal of NATs and firewalls, therefore to videos on distant servers.</li>
+							</ul>
 							For more information about IP, TCP, UDP, TLS, find it in the different RFCs: <br>
 							<ul>
 								<li><a href="https://www.rfc-editor.org/info/rfc791">IPv4: Internet Protocol version 4</a></li>
