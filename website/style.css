@@ -47,17 +47,23 @@
 	width: 50%;
 }
 
-
-img:active
+.contenu 
 {
-   transform: scale(1.2);
-   transition: 1s;
+ background-color:#FFFFFF;
+ border:1px solid #999999;
+ cursor:default;
+ display:none;
+ margin-top: 15px;
+ position:absolute;
+ text-align:left;
+ width:400px;
+ z-index:50;
+ padding: 25px 25px 20px;
 }
-
-
-img:not(:active)
-{
-   transition: 0.5s;
+a.selected {
+ background-color:#1F75CC;
+ color:white;
+ z-index:100;
 }
 
 table,
