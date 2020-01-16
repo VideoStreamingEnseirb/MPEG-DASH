@@ -58,15 +58,14 @@
 
 							<li>The work on MPEG-DASH started in 2010; it became a Draft International Standard in January 2011, and an International Standard in November 2011.
 							The MPEG-DASH standard was published in April, 2012 but has been revised in 2019 as MPEG-DASH ISO/IEC 23009-1:2019.</li>
-							<li>It is based on the derivation of content in several versions having distinct quality and
+							<li>It is based on the derivation of content in several versions having distinct qualities and
 							characteristics and then cut into short segments.</li>
 							<li>A manifest file in .xml format (the Media Presentation Description (MPD)) gives the client
 							the information necessary to request each segment individually from conventional HTTP web
 							servers.</li>
-							<li>The behavior of the client isn’t normalized, this way the provider of the service can adapt
+							<li>The behavior of the client is not normalized, this way the provider of the service can adapt
 							it to its needs.</li>
-							<li>In practice, the choice of an adaptive bitrate streaming is ever done, so the selection of
-							each segment is done by the client while the content is being played by choosing the maximum
+							<li>In practice, the selection of each segment is done by the client while the content is being played by choosing the maximum
 							bit rate that avoids stalls or rebuffering events.</li>
 							<li>This method adapts the stream to the network conditions when changing, and provides high
 							quality streaming. The use of HTTP makes possible to rely on the existing web infrastructure
@@ -129,9 +128,9 @@
 							<li> A period ID: determines the type of information (audio, video, subtitle)</li>
 							<li> An adaptation set: determines the quality and bitrate of the segment</li>
 							<li> A representation: contains all the segment information</li>
-							<li> A segment information: contains the URL of each segment and provides additional information about the segment in itself (beginning time, end time, …)</li>
+							<li> A segment information: contains the URL of each segment and provides additional information about the segment in itself (beginning time, end time, etc.)</li>
 						</ul>
-						With a MPD, it is easy to select the segment wanted, with the quality/bitrate/… needed.
+						With a MPD, it is easy to select the segment wanted, with the quality/bitrate/etc. needed.
 					</p>
 
 					<h5>General Fonctionment</h5>
@@ -365,7 +364,9 @@
 					<li>
 						<h3> Introduction</h3>
 						<p>
-							The goal of the player part is to reproduce the above demonstration on your own website. The goal of the server part is to create a local server containing the MPD server and a CDN server in order to read a local video. In addition, you will create a MPD file and dashable segments of a selected video.
+							The goal of the player part is to reproduce the above demonstration on your own website. <br>
+							The goal of the server part is to create a local server containing the MPD server and a CDN server in order to read a local video.  <br>
+							In addition, you will create a MPD file and dashable segments of a selected video.
 
 						</p>
 					</li>
@@ -377,7 +378,7 @@
 								We used the library DashJS to settle our dash player via JavaScript and 
 								<a href="https://caniuse.com/#feat=mediasource"> compliant browsers</a>. Have a look on their
 								<a href="https://github.com/Dash-Industry-Forum/dash.js"> GitHub</a> if you want more information. 
-								<b> If you have a compliant browsers, no need to set up anything.</b> 
+								<b> If you have a compliant browser, no need to set up anything.</b> 
 							</li>
 							<br>
 							<li>
@@ -389,11 +390,11 @@
 									<br>
 									<br>
 									Download and install ffmpeg with:
-									<code>sudo apt-get install ffmpeg</code>
+									<code>sudo apt-get install ffmpeg</code> <br>
 									Download and install HTTP server Apache 2 with:
-									<code>sudo apt install apache2</code>
+									<code>sudo apt install apache2</code> <br>
 									Verify the configuration :
-									<code>apache2 -version</code>
+									<code>apache2 -version</code> <br>
 									Start the Apache2 service : 
 									<code>sudo systemctl startup apache2</code>
 								</p>
@@ -411,7 +412,7 @@
 								You can integrate the dash player simply by adding those lines (in an html file). 
 								<code>
 									touch index.html
-								</code>
+								</code> <br>
 								You can modify the MPD url to change the video played. 
 								<br>
 								<pre>
@@ -442,21 +443,14 @@
 										<h5> Create MPD file and DASHable segments</h5>
 										<p>
 											Go into your working directory:
-											<br>
-											<br>
 											<code> mkdir serverVideo</code>
-											<br>
 											<code>cd serverVideo</code>
-											<br>
 											<br>
 											Paste your file <i> in.video </i>(the video you want to dash) into the folder <i>serverVideo</i>.
 											<br>
 											<br>
 											Create the audio file with this command:
-											<br>
-											<br>
 											<code> ffmpeg -i in.video -vn -acodec libvorbis -ab 128k -dash 1 my_audio.webm</code>
-											<br>
 											<br>
 											Create then the dashable segment in different qualities:
 											<br>
@@ -467,7 +461,6 @@
 												-an -vf scale=640:360 -b:v 750k -dash 1 video_640x360_750k.webm \<br>
 												-an -vf scale=640:360 -b:v 1000k -dash 1 video_640x360_1000k.webm \<br>
 												-an -vf scale=1280:720 -b:v 1500k -dash 1 video_1280x720_1500k.webm</code>
-											<br>
 											<br>
 											With this command line, you don't fragment the video, but you create 5 videos in different
 											formats. Check the options available in ffmpeg to see the fragmentation.
@@ -499,7 +492,7 @@
 											<br>
 											After having install your Apache2 server, put the precedent folder <i>serverVideo</i> in <i> /var/www </i>.
 											<code>sudo cp -r serverVideo /var/www/</code>
-
+											<br>
 											If you have a problem with the CORS, don't forget to allow all the origin modifying the file <i> /etc/apache2/apache2.conf </i> with:
 											<pre>
 											<code>
@@ -547,8 +540,10 @@
 				<br>
 				<h3 class="card-title">Link to GitHub repository</h3>
 				<a href="https://github.com/VideoStreamingEnseirb/MPEG-DASH.git">GitHub repository</a>
-				BIBLIO
-				<br>https://vitux.com/how-to-install-and-configure-apache-web-server-on-ubuntu/
+				<br>
+				<br>
+				<h3 class="card-title">Bibliography</h3>
+				<a href="https://vitux.com/how-to-install-and-configure-apache-web-server-on-ubuntu/">How to install and configure Apache on Ubuntu ?</a>
 			</div>
 		</div>
 	</div>
