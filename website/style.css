@@ -21,18 +21,43 @@
 	width: 40px
 }
 
-.texte-illustration {
+/*.texte-illustration {
     overflow: hidden;
-}
+}*/
+
 .texte-illustration .flotteg {
     float: left;
     margin: 5px 20px 5px 0;
 	width: 50%;
 }
+
 .texte-illustration .flotted {
     float: right;
     margin: 5px 0 5px 20px;
 	width: 50%;
+}
+
+.texte-icone {
+    overflow: hidden;
+}
+
+.texte-icone .flotteg {
+    float: left;
+    margin: 5px 20px 5px 0;
+	width: 50%;
+}
+
+
+img:active
+{
+   transform: scale(1.2);
+   transition: 1s;
+}
+
+
+img:not(:active)
+{
+   transition: 0.5s;
 }
 
 table,
