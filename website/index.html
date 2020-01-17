@@ -47,7 +47,45 @@
 					<h5>Click <a href="https://mpeg.chiariglione.org/standards/mpeg-dash">&gt;here&lt;</a> for the Official	Website of MPEG-DASH</h5>
 					<div class="texte-illustration">
 						<p class="flotteg">
-							<img id="photo" src="../images/Bitrate_streaming.jpg" alt="Bitstrate streaming" width=100%>
+						<!-- Trigger the Modal -->
+						<img id="myImg" src="../images/Bitrate_streaming.jpg" alt="Bitstrate streaming" width=100%>
+
+						<!-- The Modal -->
+						<div id="myModal" class="modal">
+
+						  <!-- The Close Button -->
+						  <span class="close">&times;</span>
+
+						  <!-- Modal Content (The Image) -->
+						  <img class="modal-content" id="img01">
+
+						  <!-- Modal Caption (Image Text) -->
+						  <div id="caption"></div>
+						</div>
+
+						<script>
+						// Get the modal
+						var modal = document.getElementById("myModal");
+
+						// Get the image and insert it inside the modal - use its "alt" text as a caption
+						var img = document.getElementById("myImg");
+						var modalImg = document.getElementById("img01");
+						var captionText = document.getElementById("caption");
+						img.onclick = function(){
+						  modal.style.display = "block";
+						  modalImg.src = this.src;
+						  captionText.innerHTML = this.alt;
+						}
+
+						// Get the <span> element that closes the modal
+						var span = document.getElementsByClassName("close")[0];
+
+						// When the user clicks on <span> (x), close the modal
+						span.onclick = function() {
+						  modal.style.display = "none";
+						}
+						</script>
+							
 						</p>
 						<p>
 
@@ -84,7 +122,47 @@
 					<h5>Protocol stack</h5>
 					<div class="texte-illustration">
 						<p class="flotted">
-							<img src="../images/Protocol stack.jpg" alt="Protocol stack" width=100%>
+
+
+						<!-- Trigger the Modal -->
+						<img id="prot" src="../images/Protocol stack.jpg" alt="Protocol stack" width=100%>
+
+						<!-- The Modal -->
+						<div id="myModal" class="modal">
+
+						  <!-- The Close Button -->
+						  <span class="close">&times;</span>
+
+						  <!-- Modal Content (The Image) -->
+						  <img class="modal-content" id="img01">
+
+						  <!-- Modal Caption (Image Text) -->
+						  <div id="caption"></div>
+						</div>
+
+						<script>
+						// Get the modal
+						var modal = document.getElementById("myModal");
+
+						// Get the image and insert it inside the modal - use its "alt" text as a caption
+						var img = document.getElementById("prot");
+						var modalImg = document.getElementById("img01");
+						var captionText = document.getElementById("caption");
+						img.onclick = function(){
+						  modal.style.display = "block";
+						  modalImg.src = this.src;
+						  captionText.innerHTML = this.alt;
+						}
+
+						// Get the <span> element that closes the modal
+						var span = document.getElementsByClassName("close")[0];
+
+						// When the user clicks on <span> (x), close the modal
+						span.onclick = function() {
+						  modal.style.display = "none";
+						}
+						</script>
+							
 						</p>
 						<p>
 							The protocol stack of MPEG-DASH can be divided into two possibilities: one connected and one
@@ -120,7 +198,45 @@
 					</div>
 
 					<h5>Media Presentation Description</h5>
-					<img src="../images/MPD schema.jpg" alt="MPD" width=100%>
+					<!-- Trigger the Modal -->
+						<img id="mpd" src="../images/MPD schema.jpg" alt="MPD" width=100%>
+
+						<!-- The Modal -->
+						<div id="myModal" class="modal">
+
+						  <!-- The Close Button -->
+						  <span class="close">&times;</span>
+
+						  <!-- Modal Content (The Image) -->
+						  <img class="modal-content" id="img01">
+
+						  <!-- Modal Caption (Image Text) -->
+						  <div id="caption"></div>
+						</div>
+
+						<script>
+						// Get the modal
+						var modal = document.getElementById("myModal");
+
+						// Get the image and insert it inside the modal - use its "alt" text as a caption
+						var img = document.getElementById("mpd");
+						var modalImg = document.getElementById("img01");
+						var captionText = document.getElementById("caption");
+						img.onclick = function(){
+						  modal.style.display = "block";
+						  modalImg.src = this.src;
+						  captionText.innerHTML = this.alt;
+						}
+
+						// Get the <span> element that closes the modal
+						var span = document.getElementsByClassName("close")[0];
+
+						// When the user clicks on <span> (x), close the modal
+						span.onclick = function() {
+						  modal.style.display = "none";
+						}
+						</script>
+					
 					<br>
 					<p>
 					<br>
@@ -139,7 +255,46 @@
 
 					<div class="texte-illustration">
 						<p class="flotted">
-							<img src="../images/Fonctionment.jpg" alt="Fonctionment" width=100%>
+
+						<!-- Trigger the Modal -->
+						<img id="general" src="../images/Fonctionment.jpg" alt="Fonctionment" width=100%>
+
+						<!-- The Modal -->
+						<div id="myModal" class="modal">
+
+						  <!-- The Close Button -->
+						  <span class="close">&times;</span>
+
+						  <!-- Modal Content (The Image) -->
+						  <img class="modal-content" id="img01">
+
+						  <!-- Modal Caption (Image Text) -->
+						  <div id="caption"></div>
+						</div>
+
+						<script>
+						// Get the modal
+						var modal = document.getElementById("myModal");
+
+						// Get the image and insert it inside the modal - use its "alt" text as a caption
+						var img = document.getElementById("general");
+						var modalImg = document.getElementById("img01");
+						var captionText = document.getElementById("caption");
+						img.onclick = function(){
+						  modal.style.display = "block";
+						  modalImg.src = this.src;
+						  captionText.innerHTML = this.alt;
+						}
+
+						// Get the <span> element that closes the modal
+						var span = document.getElementsByClassName("close")[0];
+
+						// When the user clicks on <span> (x), close the modal
+						span.onclick = function() {
+						  modal.style.display = "none";
+						}
+						</script>
+							
 						</p>
 						<p>
 
@@ -147,7 +302,7 @@
 						</p>
 						<div class="texte-icone">
 							<p class="flotteg" id=numeros>
-								<img src="../images/1.png" alt="MPD"  width=100%>
+								<img src="../images/1.png"  width=100%>
 							</p>
 							<p>
 								First, the client requests the Media Presentation Description (MPD) associated with the
@@ -160,7 +315,7 @@
 
 						<div class="texte-icone">
 							<p class="flotteg" id=numeros>
-								<img src="../images/2.png" alt="MPD" width=100%>
+								<img src="../images/2.png" width=100%>
 							</p>
 							<p>
 								Everything is supervised by a heuristic control.
@@ -170,7 +325,7 @@
 
 						<div class="texte-icone">
 							<p class="flotteg" id=numeros>
-								<img src="../images/3.png" alt="MPD" width=100%>
+								<img src="../images/3.png" width=100%>
 							</p>
 							<p>
 								The HTTP client then begins to request one by one the segments from the servers
@@ -183,7 +338,7 @@
 
 						<div class="texte-icone">
 							<p class="flotteg" id=numeros>
-								<img src="../images/4.png" alt="MPD" width=100%>
+								<img src="../images/4.png" width=100%>
 							</p>
 							<p>
 								The segments are parsed using a segment parser.
@@ -193,7 +348,7 @@
 
 						<div class="texte-icone">
 							<p class="flotteg" id=numeros>
-								<img src="../images/5.png" alt="MPD" width=100%>
+								<img src="../images/5.png"width=100%>
 							</p>
 							<p>
 								The segments are finally played by the player.
